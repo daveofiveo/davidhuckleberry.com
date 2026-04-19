@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>DavidHuckleberry.Com</title>
   <style>
     * {
@@ -26,7 +26,7 @@
 
     h1 {
       position: fixed;
-      bottom: 28px;
+      bottom: calc(28px + env(safe-area-inset-bottom));
       left: 28px;
       color: white;
       font-family: 'Helvetica Neue', Arial, sans-serif;
