@@ -16,7 +16,13 @@ sips --setProperty formatOptions 50 background.jpeg > /dev/null
 SIZE=$(wc -c < background.jpeg)
 echo "Compressed to $(( SIZE / 1024 ))KB"
 
-git add background.jpeg
+git add -f background.jpeg
+
+if git diff --cached --quiet; then
+  echo "Image unchanged — nothing to push"
+  exit 0
+fi
+
 git commit -m "update: new background photo"
 git push
 
